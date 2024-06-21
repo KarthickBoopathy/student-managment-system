@@ -39,4 +39,10 @@ public class StudentService {
             return ex.getMessage();
         }
     }
+
+    public Student updateStudentsById(Long id, Boolean isFeePaid){
+        Student student1 = studentRepository.findById(id).get();
+        student1.setIsFeePaid(isFeePaid);
+        return studentRepository.save(student1);
+    }
 }

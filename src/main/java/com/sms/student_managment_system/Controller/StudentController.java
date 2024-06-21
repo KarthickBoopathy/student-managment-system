@@ -44,4 +44,9 @@ public class StudentController {
         return studentService.removeStudentById(id);
     }
 
+    @PutMapping("/updateStudents/{id}/{isFeePaid}")
+    public Student updateStudentsFee(@PathVariable Long id, @PathVariable Boolean isFeePaid){
+        return studentService.updateStudentsById(id, isFeePaid);
+    }
+
 }
